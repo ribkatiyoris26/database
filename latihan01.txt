@@ -1,0 +1,19 @@
+> show databases;
+> use latihan1;
+> drop database latihan1;
+> show database;
+> create database latihan1;
+> create table mahasiswa
+-> (nama text(20),
+-> kelas varchar(10),
+-> prodi text(15));
+> desc mahasiswa;
+
+> alter table mahasiswa add column nim int(5) FIRST;
+> desc mahasiswa;
+
+> alter table mahasiswa add column alamat text(20);
+> desc mahasiswa;
+
+> alter table mahasiswa add primary key(nim);
+> desc mahasiswa;

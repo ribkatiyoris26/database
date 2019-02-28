@@ -1,0 +1,39 @@
+> create table pratikum4;
+> use pratikum4;
+> crete table pegawai
+-> (idpegawai varchar(20),
+-> nama_depan text(20),
+-> nama_belakang text(20),
+-> email varchar(20),
+-> telepon varchar(15),
+-> tgl_kontrak date,
+-> idjob varchar(7),
+-> gaji int(10),
+-> tunjangan varchar(10));
+> desc pegawai;
+> alter table pegawai add primary key(idpegawai);
+
+> insert into pegawai(idpegawai,nama_depan,nama_belakang,email,telepon,tgl_kontrak,idjob,gaji,tunjangan) values
+-> ('E001','Ferry','gustiawan','ferry@yahoo.com','07117059004','2005-09-01','L0001','2000000','500000'),
+-> ('E002','Aris','ganiardi','aris@yahoo.com','081312345678','2006-09-01','L0002','2000000','200000'),
+-> ('E003','Faiz','ahmad','faiz@gmail.com','081367384322','2006-10-01','L0003','1500000','NULL'),
+-> ('E004','Emma','bunton','emma@gmail.com','081363484342','2006-10-01','L0004','1500000','0'),
+-> ('E005','Mike','scoff','mike@plasa.com','08163454555','2007-09-01','L0005','1250000','0'),
+-> ('E006','Lincoln','burrows','linc@yahoo.com','08527388432','2008-09-01','L0006','1750000','NULL');
+> select * from pegawai;
+
+> select * from pegawai where gaji <> 2000000 and 1250000;
+
+> select * from pegawai where tunjangan = 'NULL';
+
+> select * from pegawai where tunjangan NOT LIKE 'NULL';
+
+> select count(idpegawai) from pegawai;
+
+> select sum(gaji) as jumlah from pegawai;
+
+> select avg(gaji) as jumlah from pegawai;
+
+> select min(gaji) as terendah from pegawai;
+
+> select max(gaji) as terendah from pegawai;

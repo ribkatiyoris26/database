@@ -1,0 +1,33 @@
+> create database pratikum5;
+> use pratikum5;
+> create table pet
+-> (name text(10),
+-> owner text(10),
+-> species text(10),
+-> sex varchar(2),
+-> birth date
+-> death date);
+
+> desc pet;
+> insert into per(name,owner,species,sex,birth,death) values
+-> ('Puffball','Diane','Hamster','f','1999-03-03','NULL'),
+-> ('Claws','Gwen','Cat','m','1994-03-17','NULL'),
+-> ('Fluffy','Harold','Cat','f','1993-02-04','NULL'),
+-> ('Buffy','Harold','Dog','f','1989-05-13','NULL'),
+-> ('Fang','Benny','Dog','m','1990-08-27','NULL'),
+-> ('Bowser','Diane','Dog','m','1989-08-31','1995-07-29'),
+-> ('Chirpy','Gwen','Bird','f','1998-09-11','NULL'),
+-> ('Whistler','Gwen','Bird','NULL','1997-12-09','NULL'),
+-> ('Slim','Benny','Snake','m','1996-04-29','NULL');
+> select * from pet;
+
+> select owner,count(species) from pet group by owner;
+> select species,count(species) from pet group by species;
+> select sex,count(sex) from pet group by sex;
+> select species, sex,count(species) as jumlah from pet group by species;
+> select species,sex, count(sex) from pet where species = 'dog' or species = 'cat' group by species,sex;
+> select species,sex, count(sex) from pet
+-> where sex IS NOT NULL
+-> group by species,sex
+group by species,sex;
+

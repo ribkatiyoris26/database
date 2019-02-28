@@ -1,0 +1,38 @@
+> create database pratikum3;
+> use pratikum3;
+> create table mahasiswa
+-> (nim varchar(10) not null,
+-> nama varchar(10) not null,
+-> alamat_jalan varchar(20) not null,
+-> kota text(15) not null,
+-> kode_pos varchar(10) not null,
+-> no_hp varchar(15) not null,
+-> jenis_kelamin varchar(10) not null,
+-> tanggal_lahir date not null);
+
+> desc mahasiswa;
+> alter table mahasiswa add primary key(nim);
+> desc mahasiswa;
+
+> insert into mahasiswa(nim,nama,alamat_jalan,kota,kode_pos,no_hp,jenis_kelamin,tanggal_lahir) values
+->('11223344','Ari Santoso','','Cikarang','','','Laki-laki','1998-10-12'),
+-> ('11223345','Ario Talib','','Cikarang','','','laki-laki','1999-11-16'),
+-> ('11223346','Dina Marlina','','Kerawang','','','Perempuan','1997-12-01'),
+-> ('11223347','Lisa Ayu','','Bekasi','','','Perempuan','1996-01-02'),
+-> ('11223348','Tiara Wahidah','','Bekasi','','','Perempuan','1980-02-05'),
+-> ('11223349','Anton Sinaga','','Cikarang','','','Laki-laki','1988-03-10'),
+> select * from mahasiswa;
+
+> update mahasiswa set tanggal_lahir = '1979-08-31' where nim = '11223344';
+> select * from mahasiswa where nim = '11223344';
+> delete from mahasiswa where nim = '11223346';
+> select * from mahasiswa where tanggal_lahir >= '1996-01-02';
+> select * from mahasiswa where kota = 'Bekasi' and jenis_kelamin = 'Perempuan';
+> select nama,tanggal_lahir,jenis_kelamin
+-> from mahasiswa
+-> where tanggal_lahir > 22
+-> and jenis_kelamin = 'Perempuan'
+-> order by nama;
+> select nama,alamat_jalan from mahasiswa where nim;
+> select * from mahasiswa order by nama desc;
+> select * from mahasiswa order by nama asc;
